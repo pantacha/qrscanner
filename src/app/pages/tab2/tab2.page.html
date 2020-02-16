@@ -1,0 +1,24 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>
+      Historial
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-item *ngFor="let item of dataLocal.guardados">
+      <ion-icon slot="start" [name]="item.icon" color="primary"></ion-icon>
+      <ion-label>
+        <h2>{{item.name}}</h2>
+        <p>{{item.created | date: 'medium'}}</p>
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <ion-button fill="outline" size="small" shape="round" color="danger" (click)="cancel(key)">
+    Cancel
+  </ion-button>
+
+</ion-content>
